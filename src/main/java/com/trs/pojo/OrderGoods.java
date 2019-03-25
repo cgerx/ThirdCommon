@@ -1,5 +1,9 @@
 package com.trs.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 /**
  * Title:
  * Description:
@@ -7,7 +11,11 @@ package com.trs.pojo;
  * Author: cg
  * Create Time:2019/3/22 15:17
  */
+@TableName("`order_goods`")
 public class OrderGoods {
+
+    @TableId(type = IdType.AUTO)
+    private Integer id;
 
     private String productCode;
 
@@ -16,6 +24,14 @@ public class OrderGoods {
     private Double goodsPrice;
 
     private String orderNo;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getProductCode() {
         return productCode;
